@@ -1,0 +1,59 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  height: 100vh;
+  padding: 2rem;
+
+  background-color: #000;
+  color: #0f0;
+  font-family: 'Roboto Mono', monospace;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+p {
+  margin: 0.25rem 0;
+  white-space: pre-wrap;
+}
+
+.prompt {
+  color: #0f0;
+  font-weight: bold;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  animation: blink 1.2s steps(2, start) infinite;
+  color: #0f0;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Schreibmaschinen-Effekt auf der letzten Zeile */
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid transparent;
+  display: inline-block;
+  animation: typing 4s steps(30, end) forwards;
+  width: 25ch; /* fixierte Breite passend zur Textlänge */
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 25ch }
+}

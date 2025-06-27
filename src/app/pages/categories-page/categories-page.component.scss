@@ -1,0 +1,105 @@
+:host {
+  display: block;
+  padding: 1rem;
+  font-family: 'Roboto Mono', monospace;
+  background-color: #000;
+  color: #0f0;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  position: relative;
+  font-weight: normal;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .menu-button {
+    position: static; // wird nun nicht mehr absolut, sondern bleibt inline im flex container
+    background-color: #0f0;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    padding: 0.25rem 0.75rem;
+    cursor: pointer;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #0c0;
+    }
+  }
+}
+
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+input {
+  flex: 1;
+  padding: 0.5rem;
+  background-color: #111;
+  border: 1px solid #0f0;
+  color: #0f0;
+}
+
+button {
+  background-color: #0f0;
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #0c0;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+
+    .cat-name {
+      flex: 1;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .cat-date {
+      width: 120px;
+      flex-shrink: 0;
+      color: #0a0;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      text-align: right;
+      margin: 0 1rem;
+    }
+
+    button {
+      flex-shrink: 0;
+      background: transparent;
+      color: #0f0;
+      border: none;
+      font-size: 1.1rem;
+
+      &:hover {
+        color: #c00;
+      }
+    }
+  }
+}

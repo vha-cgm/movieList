@@ -1,0 +1,22 @@
+<h1>
+  Items
+  <button (click)="back()">← Back</button>
+</h1>
+
+<div class="input-group">
+  <input
+    type="text"
+    placeholder="Add new item..."
+    [(ngModel)]="newItemText"
+    (keyup.enter)="addItem()"
+  />
+  <button (click)="addItem()">Add</button>
+</div>
+
+<ul>
+  <li *ngFor="let it of items$ | async">
+    <span class="item-text">{{ it.content }}</span>
+    <small class="item-date">({{ formatDate(it.createdAt) }})</small>
+    <button (click)="deleteItem(it.id)">🗑️</button>
+  </li>
+</ul>

@@ -1,0 +1,22 @@
+<h1>
+  Notes
+  <button class="menu-button" (click)="goToMenu()">Menu</button>
+</h1>
+
+<div class="input-group">
+  <input
+    type="text"
+    placeholder="Add new note..."
+    [(ngModel)]="newNoteText"
+    (keyup.enter)="addNote()"
+  />
+  <button (click)="addNote()">Add</button>
+</div>
+
+<ul>
+  <li *ngFor="let note of notes$ | async">
+    <span class="note-text">{{ note.text }}</span>
+    <small class="note-date">({{ formatDate(note.createdAt) }})</small>
+    <button (click)="deleteNote(note.id)">🗑️</button>
+  </li>
+</ul>
